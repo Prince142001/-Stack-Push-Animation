@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack-Animation</title>
+    <style>
+        *{
+            background-color: rgb(255, 255, 255);
+        }
+        .content {
+            margin: 0px;
+            color: rgb(255, 255, 255);
+            background-color: deeppink;
+            font-size: x-large;
+        }
+
+        .stack-animation {
+            background-color: black;
+            height: fit-content;
+            font-size: x-large;
+            width: 100%;
+            color: azure;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .stack-animation>div {
+            padding: 8px;
+            margin: 0px 5px;
+            background-color: aqua;
+
+        }
+
+        .stack-animation p{
+            position: absolute;
+            margin-left: 20%;
+            margin-top: 5px;
+            padding: 3px 5px;
+            color: black;
+        }
+
+        .element-A {
+            position: relative;
+            animation-name: element-A;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes element-A {
+            0% {
+                background-color: aqua;
+                color: black;
+                left: 0px;
+                top: 0px;
+                position: relative;
+            }
+            50%{
+                left:0px;
+                top: 470px;
+                background-color: greenyellow;
+                color: whitesmoke;
+                display: flex;
+            }
+            100%{
+                left:620px;
+                top: 470px;
+                font-size: x-large;
+                background-color: aqua;
+                color: black;
+                display: flex;
+            }
+        }
+
+        .element-B {
+            position: relative;
+            animation-name: element-B;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes element-B {
+            0% {
+                background-color: aqua;
+                color: black;
+                left: 0px;
+                top: 0px;
+                position: relative;
+            }
+            50%{
+                left:0px;
+                top: 420px;
+                font-size: x-large;
+                background-color: yellowgreen;
+                color: whitesmoke;
+                display: flex;
+            }
+            100%{
+                left:570px;
+                top: 420px;
+                font-size: x-large;
+                background-color: aqua;
+                color: black;
+                display: flex;
+            }
+        }
+        .element-C {
+            position: relative;
+            animation-name: element-C;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes element-C {
+            0% {
+                background-color: aqua;
+                color: black;
+                left: 0px;
+                top: 0px;
+                position: relative;
+            }
+            50%{
+                left:0px;
+                top: 375px;
+                font-size: x-large;
+                background-color: yellowgreen;
+                color: whitesmoke;
+                display: flex;
+            }
+            100%{
+                left:545px;
+                top: 375px;
+                font-size: x-large;
+                background-color: aqua;
+                color: black;
+                display: flex;
+            }
+        }
+        .element-D {
+            position: relative;
+            animation-name: element-D;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes element-D {
+            0% {
+                background-color: aqua;
+                color: black;
+                left: 0px;
+                top: 0px;
+                position: relative;
+            }
+            50%{
+                left:0px;
+                top: 330px;
+                font-size: x-large;
+                background-color: yellowgreen;
+                color: whitesmoke;
+                display: flex;
+            }
+            100%{
+                left:505px;
+                top: 330px;
+                font-size: x-large;
+                background-color: aqua;
+                color: black;
+                display: flex;
+            }
+        }
+        .element-E {
+            position: relative;
+            animation-name: element-E;
+            animation-duration: 7.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes element-E {
+            0% {
+                background-color: aqua;
+                color: black;
+                left: 0px;
+                top: 0px;
+                position: relative;
+            }
+            50%{
+                left:0px;
+                top: 283px;
+                font-size: x-large;
+                background-color: yellowgreen;
+                color: whitesmoke;
+                display: flex;
+            }
+            100%{
+                left:450px;
+                top: 283px;
+                font-size: x-large;
+                background-color: aqua;
+                color: black;
+                display: flex;
+            }
+        }
+
+        .show-stored-content {
+            margin-top: 200px;
+            color: bisque;
+            background-color: deeppink;
+            text-align: center;
+            font-size: x-large;
+        }
+
+        .stored-stack-animation {
+            width: fit-content;
+            height: fit-content;
+            margin: 10px 630px;
+            font-size: x-large;
+            background-color: red;
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .stored-stack-animation>div {
+            width: 80px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            background-color: aqua;
+            color: whitesmoke;
+        }
+
+        .stored-element {
+            position: sticky;
+            animation-name: stored-element;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes stored-element {
+            from {
+                background-color: red;
+                color: whitesmoke;
+            }
+
+            to {
+                background-color: greenyellow;
+                color: whitesmoke;
+            }
+        }
+
+        .stored-element:nth-child(1) {
+            animation-duration: 1s;
+            animation-delay: 3s;
+        }
+
+        .stored-element:nth-child(2) {
+            animation-duration: 1s;
+            animation-delay: 4s;
+        }
+
+        .stored-element:nth-child(3) {
+            animation-duration: 1s;
+            animation-delay: 5s;
+        }
+
+        .stored-element:nth-child(4) {
+            animation-duration: 1s;
+            animation-delay: 6.1s;
+        }
+
+        .stored-element:nth-child(5) {
+            animation-duration: 1s;
+            animation-delay: 7.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">Elements of the stack.</div>
+    <div class="stack-animation">
+        <div class="element-A">A</div>
+        <div class="element-B">B</div>
+        <div class="element-C">C</div>
+        <div class="element-D">D</div>
+        <div class="element-E">E</div>
+        <p><b>&DoubleLeftArrow;</b> Push operation are performed in the stack.</p>
+    </div>
+    <div class="show-stored-content">Elements stored in the stack.</div>
+    <div class="stored-stack-animation">
+        <div class="stored-element">A</div>
+        <div class="stored-element">B</div>
+        <div class="stored-element">C</div>
+        <div class="stored-element">D</div>
+        <div class="stored-element">E</div>
+    </div>
+</body>
+
+</html>
